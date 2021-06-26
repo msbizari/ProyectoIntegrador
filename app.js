@@ -28,23 +28,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
-app.set ('trust proxy', 1);
-app.use(session({
-  cookie: {
-    secure: true,
-    masAge: 60000
-  },
-  secret: "Nuestro mensaje secreto",
-  store: new redisStore (),
-  resave: false,
-	saveUninitialized: true,}));
-
-app.use(function(req,res,next) {
-  if (!req.session){
-    return next(new Error('Oh no'))
-  }
-  next ()
-});
+app.use(session({secret: "Nuestro mensaje secreto",
+resave: false,
+	saveUninitialized: false,}));
 
 
 app.use(userLoggedMiddleware);
