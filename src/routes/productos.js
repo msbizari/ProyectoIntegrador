@@ -1,5 +1,5 @@
 const express = require('express');
-const mainController = require('../controllersz/mainController');
+const mainController = require('../controllers/mainController');
 const router = express.Router();
 const path = require('path')
 const multer = require('multer');
