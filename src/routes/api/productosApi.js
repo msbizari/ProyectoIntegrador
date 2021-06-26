@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const mainApiController = require('../../controllers/api/mainApiController');
+const mainApiController = require('../../controllersz/api/mainApiController');
 
 router.get('/', mainApiController.list);
 router.get('/:id', mainApiController.detail);
