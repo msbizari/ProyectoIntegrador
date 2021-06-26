@@ -26,12 +26,13 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/msbizari/Grupo_7_EnMovimiento.git"
+    "url": "git+https://github.com/msbizari/ProyectoIntegrador.git"
+    
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/msbizari/Grupo_7_EnMovimiento/issues"
+    "url": "https://github.com/msbizari/ProyectoIntegrador/issues"
   },
-  "homepage": "https://github.com/msbizari/Grupo_7_EnMovimiento#readme"
+  "homepage": "https://github.com/msbizari/ProyectoIntegrador#readme"
 }
