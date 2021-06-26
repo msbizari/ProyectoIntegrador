@@ -1,0 +1,86 @@
+[
+ {
+  "id": 1,
+  "name": "Juan",
+  "lastName": "Lopez",
+  "birthDate": "1980-05-05",
+  "address": "Libertador 333",
+  "email": "juan@gmail.com",
+  "password": "$2a$10$QKc8ZR3GiOIZ.ax8qHfp4OIR0CSq8agwlsFU3gPmsDdbFFWaa4pvq",
+  "passwordConfirm": "12345",
+  "newsletter": "true",
+  "image": "default-image.png"
+ },
+ {
+  "id": 2,
+  "name": "blanca",
+  "lastName": "nieves",
+  "birthDate": "1900-04-28",
+  "address": "havaii 1001",
+  "email": "blancanieves@mail.com",
+  "password": "$2a$10$JzktkgwDJFIaNuGv2AVzx.1srN/uug1wOvYQLcHQO049DQjve3KF.",
+  "passwordConfirm": "hola123",
+  "newsletter": "false",
+  "image": "blanca_nieves.jpeg"
+ },
+ {
+  "id": 3,
+  "name": "pedro",
+  "lastName": "picapiedra",
+  "birthDate": "1900-04-22",
+  "address": "cuevana 01",
+  "email": "pedro.notiene@mail.com",
+  "password": "$2a$10$OZ/1kVlHGR.6xF3jN1Sk/e8GU9w65j6GS6QNS/oQVIoD3W.Z/G4ja",
+  "passwordConfirm": "piedra123",
+  "newsletter": "false",
+  "image": "myfile-1617490658241.jpeg"
+ },
+ {
+  "id": 4,
+  "name": "Ricky",
+  "lastName": "Martin",
+  "birthDate": "1902-04-24",
+  "address": "Puerto Rico",
+  "email": "ricky@mail.com",
+  "password": "$2a$10$ZgZBvodIlwl3tnURSiVQruJ5pL5GdsbNbm9ocagwS.NBaSha6RR32",
+  "passwordConfirm": "ricky123",
+  "newsletter": "false",
+  "image": "myfile-1617490994295.jpg"
+ },
+ {
+  "id": 5,
+  "name": "Anastasia",
+  "lastName": "Romanov",
+  "birthDate": "1902-04-25",
+  "address": "Imperio Ruso",
+  "email": "anastasia@mail.com",
+  "password": "$2a$10$5x8rm30x1.ChKr1ZrqOUQudFR9vnpsaCtc2KN4siL0UzXXzOEIgUe",
+  "passwordConfirm": "ani123",
+  "newsletter": "false",
+  "image": "myfile-1617550772914.jpg"
+ },
+ {
+  "id": 6,
+  "name": "Ricardo",
+  "lastName": "Fort",
+  "birthDate": "2021-04-01",
+  "address": "Cochabamba 999",
+  "email": "rickyfelfort@hotmail.com",
+  "password": "$2a$10$FHxGylz5HsB4aZTaFIJTm.Wh3jMVXZGjJoFH/E7DhdDWE7m5CsMY2",
+  "passwordConfirm": "cortastelaloz",
+  "newsletter": "true",
+  "image": "myfile-1617583518125.jpeg"
+ },
+ {
+  "id": 7,
+  "name": "Esmeralda",
+  "lastName": "Mitre",
+  "birthDate": "2021-05-01",
+  "address": "La Recoleta",
+  "email": "esmemoney@gmail.com",
+  "password": "$2a$10$lHee8bQVyHTN2b.1N0n2A.2MAIEYNgVgx2V1kCyCa0yn7ohFhIZOK",
+  "passwordConfirm": "alplax2021",
+  "newsletter": "true",
+  "image": "myfile-1617587052793.jpeg"
+ }
+]

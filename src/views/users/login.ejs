@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("../partials/head") %> 
+    <link href="/css/styles.css" rel="stylesheet">
+
+    <body>
+        <%- include("../partials/header") %>
+        <main>
+            <div>       
+                <form action="/users/login" method="POST" class="create-form">
+                    
+                    
+                    <h2>INICIO DE SESION</h2>
+                
+        
+                    <div>
+                        <ul class = "errors">
+                        </ul>
+                    </div>
+                    
+                    <p class="control-formulario">
+                    <label for="email">E-mail:</label>
+                    <input type="text" name="email" id="email">
+            
+                    <% if (locals.errors && errors.email) { %>
+                        <p class = "error-message"> <%= errors.email.msg %></p>
+                        <% } %>
+                    </p>
+
+                    <p class="control-formulario">
+                        <label for="password">Contraseña:</label> 
+                        <input type="password" name="password" id="password">
+                        <% if (locals.errors && errors.password) { %>
+                            <p class = "error-message"> <%= errors.password.msg %></p>
+                            <% } %>
+                    </p>
+
+                    <p class="control-formulario">
+                        <label><input id="remember-me" type="checkbox" name="remember_me"> Recordar mis datos</label> 
+                        
+                    </p>
+
+                    <p><a href=#>Restaurar Contraseña</a></p>
+                    
+                    <p>
+                        <button type="submit" class="boton-formulario">INGRESAR</button>
+                    </p>
+                    <br>
+                    
+                    <div>
+                        <h2>
+                        <p>NUEVO USUARIO</p>
+                        </h2>
+                    </div>
+                    
+                    <a href="/users/register">Registrarse como nuevo usuario</a>
+                    <br>
+                                  
+                </form>
+            </div>
+
+        </main>
+
+        <br>
+
+    <script src="/js/loginValidation.js"></script> 
+
+    </body>
+    <%- include("../partials/footer")%> 
+</html>

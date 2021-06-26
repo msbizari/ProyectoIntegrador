@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("../partials/head") %>
+        <link href="/css/styles.css" rel="stylesheet">
+
+    <body>
+        <%- include("../partials/header") %>    
+        <main>
+            
+            <section>
+                <form action="/productos" method="POST" enctype="multipart/form-data" class="register-body">
+                    <h2>CREAR PRODUCTO</h2>
+                    <div>
+                        <ul class = "errors">
+                        </ul>
+                    </div>
+
+                    <p class="control-formulario">
+                        <label for="name">Nombre del producto</label>   
+                        <input type="text" id="name" name="name" class="control" value="<%= locals.oldData ? oldData.name : null %>" >
+                        <% if (locals.errors && errors.name) { %>
+                            <p class = "error-message-product"> <%= errors.name.msg %></p>
+                        <% } %> 
+                    </p>                
+
+                    <p class="control-formulario">
+                        <label for="description">Descripción</label>   
+                        <input type="text" id="description" size= 35 name="description" class="control" value="<%= locals.oldData ? oldData.description : null %>">
+                        <% if (locals.errors && errors.description) { %>
+                            <p class = "error-message-product"> <%= errors.description.msg %></p>
+                        <% } %> 
+                    </p>
+
+                    <h3>Imagen del producto</h3>
+                    <br>
+                        <label for="myfile"></label>
+                        <input type="file" id="myfile" name="myfile">
+                        <% if (locals.errors && errors.myfile) { %>
+                            <p class = "error-message-product"> <%= errors.myfile.msg %></p>
+                        <% } %> 
+
+                    <h3>Categoría</h3>
+                    <p class="login-selects">
+                        <select name="category_id" required>
+                            <option value="" disabled selected>- seleccionar categoria - </option>
+                            <% allCategories.forEach(category => { %>
+                                <% if (locals.oldData && locals.oldData.category_id == category.id) { %>
+                                    <option value="<%= category.id %>" selected><%= category.name %></option>
+                                <% }else{ %>
+                                    <option value="<%= category.id %>"><%= category.name %></option>
+                                <% } %>
+                            <% }); %>
+                        </select>
+                    </p>
+
+                    <p class="control-formulario">
+                        <label for="discount">Descuento</label>   
+                        <input type="text" id="discount" name="discount" class="control" value="<%= locals.oldData ? oldData.discount : null %>">
+                    </p>
+
+                    <p class="control-formulario">
+                        <label for="size">Talles</label>   
+                        <input type="text" id="size" name="size" class="control" value="<%= locals.oldData ? oldData.size : null %>">
+                    </p>
+
+                    <p class="control-formulario">
+                        <label for="price">Precio</label>   
+                        <input type="text" id="price" name="price" class="control" value="<%= locals.oldData ? oldData.price : null %>">
+                    </p>
+                
+                    <h3>Marca</h3>
+                    <p class="login-selects">
+                        <select name="brand_id" required>
+                            <option value="" disabled selected>- seleccionar marca - </option>
+                            <% allBrands.forEach(brand => { %>
+                                <% if (locals.oldData && locals.oldData.brand_id == brand.id) { %>
+                                    <option value="<%= brand.id %>" selected><%= brand.name %></option>
+                                <% }else{ %>
+                                    <option value="<%= brand.id %>"><%= brand.name %></option>
+                                <% } %>
+                            <% }); %>
+                        </select>
+                    </p>
+                    <br>
+                    <button type="submit" class="boton-formulario">GUARDAR</button>
+                    <button type="reset" class="boton-formulario">BORRAR</button>
+                        
+
+                </form>
+            </section>
+        </main>
+        <script src="/js/edicionValidation.js"></script> 
+
+        </body>
+        <%- include("../partials/footer")%> 
+</html>

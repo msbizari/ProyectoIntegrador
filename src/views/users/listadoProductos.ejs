@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("../partials/head") %>
+        <link href="/css/styles.css" rel="stylesheet">
+
+    <body>
+        <%- include("../partials/header") %>    
+        <!--<div> <img class="banner" src="/images/banner-achatado.jpg" alt="Banner">
+        </div>-->
+        <main>
+            
+            
+                <div>
+                    <% if (locals.isLogged) { %>
+                        <h2 class="titulo-category-admin"><i>Hola <%= locals.userLogged.name %>!</i> Aquí podrás editar los productos de tu web</h2>
+                    <% } %>
+                </div>
+                
+                    <section class="listaproductos">
+                        <article class="producto-lista">
+                        <a href="/productos/create"><button class="boton-ticket">  CREAR NUEVO PRODUCTO </button></a>
+                        <br>
+                        <br>
+                        <br>
+                        <% for( let i = 0;  i < listaProductos.length; i++ ) { %>
+                            <h3 class="nombre-producto"><%= listaProductos[i].name%></h3>
+                            <div class="detalle-imagen2">
+                                <a href="/productos/<%= listaProductos[i].id %>/detalleDeproducto"><img src="/images/productos/<%= listaProductos[i].image %>" class="detalle-imagen" alt= "<%= listaProductos[i].name%>"></a>
+                            </div>                            
+                                <ul class="detalle-productos">  
+                                <li>Descripción:     <%= listaProductos[i].description%> </li>
+                                <li>Precio: $        <%= listaProductos[i].price%> </li>
+                                <li>Color:           <%= listaProductos[i].color%> </li>
+                                </ul>
+                                <br>
+                                <br>
+                                <% } %>
+                                </ul>                            
+                    
+                        </article>
+                    </section>
+               
+        </main>
+    </body>
+    <%- include("../partials/footer")%> 
+</html>

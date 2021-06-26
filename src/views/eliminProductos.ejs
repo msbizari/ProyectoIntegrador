@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/head") %>
+        <link href="/css/styles.css" rel="stylesheet">
+
+    <body>
+        <%- include("./partials/header") %>    
+<main>
+    <div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title">Estás eliminando: <i>
+					<%= productToDelete.name %>
+				</i></h2>
+			</div>
+		</div>
+		<div class="col-12">
+			<div> 
+				<ul class="errors">
+					
+				</ul>
+			 </div>
+			<form class="form-delete" action="/products/<%= productToDelete.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+				<div class="row product-detail">
+					<div class="col-12 col-md-6">
+						<h2 class="products-title">Estás editando: <i>
+							<%= productToEdit.name %>
+						</i></h2>
+					</div>
+				</div>
+				<div class="col-12">
+					<form action="/products/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+						<div class="row product-detail">
+							<div class="col-12 col-md-6">
+								<label for="name" class="form-label">Nombre del producto:</label>
+								<input type="text" id="name" name="name" placeholder="Ej: Zapatillas Reebok"
+								class="form-input" value="<%= product.name %> ">
+							</div>
+							<div class="col-12 col-md-6">
+								<label for="price" class="form-label">Precio del producto:</label>
+								<input type="text" id="price" name="price" placeholder="Ej: 5678" class="form-input"
+								value="<%= product.price %>">
+							</div>		
+									<div class="col-12">
+										<label for="description" class="form-label">Descripción:</label>
+										<textarea name="description" id="description"
+										class="form-input"><%= product.description %></textarea>
+									</div>
+									<div class="col-12">
+										<label for="image" class="form-label">Imagen:</label>
+										<input type="file" name="image" id="image" class="form-input">
+									</div>
+							</form>
+						</div>
+								<form class="delete" action="/products/10?_method=DELETE" method="POST" style="display: inline-flex">
+								<button type="submit" class="action-delete-button">ELIMINAR</button>
+							</form>
+							</div>
+						</div>
+					</form>
+				</div>
+				
+			</div>
+</main>
+<script src="/js/eliminarValidaciones.js"></script> 
+</body>
+<%- include("./partials/footer")%> 
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/head") %> 
+    <link href="/css/styles.css" rel="stylesheet">
+
+  <body>
+      <%- include("./partials/header") %> 
+      <!--<div> <img class="banner" src="/images/banner-achatado.jpg" alt="Banner">
+      </div>-->
+
+    <div class="slideshow-container">
+
+      <div class="mySlides fade">
+        <div class="numbertext">1 / 3</div>
+        <img src="/images/carrusel/Carusel_1.jpg" style="width:100%">
+        <!--<div class="text">Caption Text</div>-->
+      </div>
+      
+      <div class="mySlides fade">
+        <div class="numbertext">2 / 3</div>
+        <img src="/images/carrusel/Carusel_2.jpg" style="width:100%">
+        <!--<div class="text">Caption Two</div>-->
+      </div>
+      
+      <div class="mySlides fade">
+        <div class="numbertext">3 / 3</div>
+        <img src="/images/carrusel/Carusel_3.jpg" style="width:100%">
+        <!--<div class="text">Caption Three</div>-->
+      </div>
+     
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      
+    </div>
+    <br>
+      
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span> 
+      <span class="dot" onclick="currentSlide(2)"></span> 
+      <span class="dot" onclick="currentSlide(3)"></span> 
+    </div>
+    <!--<div class="container"> 
+      <marqee>
+  
+        <ul class="slider">
+          <li id="slide1">
+            <img src="/images/carrusel/legs.jpg"/>
+          </li>
+          <li id="slide2">
+            <img src="/images/carrusel/people.jpg"/>
+          </li>
+          <li id="slide3">
+            <img src="/images/carrusel/shoes.jpg"/>
+          </li>
+          <li id="slide4">
+            <img src="/images/carrusel/silhouette.jpg"/>
+          </li>
+        </ul>
+      </marqee>
+        
+        <ul class="menu">
+          <li>
+            <a href="#slide1"></a>
+          </li>
+          <li>
+            <a href="#slide2"></a>
+          </li>
+          <li>
+            <a href="#slide3"></a>
+          </li>
+          <li>
+            <a href="#slide4"></a>
+          </li>
+        </ul>
+      
+    </div>-->
+    <main>
+        <!-- la opción de acceder al listado de productos sólo aparece si el usuario está logueado, a través del icono admin a lado de su foto de perfil-->
+      <section>
+          <h2 class="titulo-category-home">NOVEDADES</h2>
+          <div class="productos">
+                <% for( let i = 0;  i < novedades.length; i++ ) { %>
+            <article class="article-productos"><a href="/productos/<%= novedades[i].id %>/detalleDeproducto"><img src="/images/productos/<%= novedades[i].image %>" width=100% alt= "<%= novedades[i].name %>"></a>
+              <div class="caja-datos-prod">
+                <i class="fas fa-truck icono-truck"></i>
+                <p class="precios">$<%= novedades[i].price %></p>
+                <!-- <p class="descuentos"><%= novedades[i].discount %>% off</p> -->
+                <h4 class="oculto-enmobile"><%= novedades[i].name %> </h4>
+                <h4 class="oculto-enmobile">Marca: <%= novedades[i].brand.name %></h4>
+              </div>
+            </article>
+            <% }%>
+          </div>
+      </section>
+      <section>
+          <h2 class="titulo-category-home">OFERTAS</h2> 
+          <div class="productos">
+              <% for( let i = 0;  i < enOferta.length; i++ ) { %>
+                  <article class="article-productos"><a href="/productos/<%= enOferta[i].id %>/detalleDeproducto %>"><img src="/images/productos/<%= enOferta[i].image %>" width=100% alt= "<%= enOferta[i].name %>"></a>
+                    <div class="caja-datos-prod">
+                      <i class="fas fa-truck icono-truck"></i>
+                      <p class="precios">$<%= enOferta[i].price %></p>
+                      <!-- <p class="descuentos"><%= enOferta[i].discount %>% off</p> -->
+                      <h4 class="oculto-enmobile"><%= enOferta[i].name %></h4>
+                      <h4 class="oculto-enmobile">Marca: <%= enOferta[i].brand.name %></h4>
+                    </div>
+                  </article>
+                  <% }%>
+          </div>
+      </section>
+      <hr>
+      <section class='historiaMarketing'>
+          <article class='historiaMarketingImage'><img src="/images/deportista.jpg" width=100% alt="foto deportista"></article>
+          <article class='historiaMarketingText'><p> No puedes poner un límite a nada. Cuanto más sueñas, más lejos llegas. - Michael Phelps</p></article>
+      </section>
+    </main>
+  </body>
+  <script src="/js/carusel.js"></script>
+<%- include("./partials/footer")%> 
+</html>

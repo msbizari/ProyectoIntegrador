@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("../partials/head") %> 
+    <link href="/css/styles.css" rel="stylesheet">
+
+    <%- include("../partials/header") %>
+        
+<body>
+	<!-- Container -->
+	<div class="container-profile">
+				<h2>Hi <%= user.name %> <%= user.lastName %> </h2>
+                <h3><%= user.email %> </h3>
+                <br>
+                <h3>Fecha Nacimiento: <%= user.birthDate %></h3>
+                <h3>Domicilio: <%= user.adress %></h3>
+                <h3>Adherido a Newsletter: <%= user.newsletter %></h3>
+				<img src="/images/usuarios/<%= user.image %>">
+				
+	</div>
+	
+</body>
+<%- include("../partials/footer")%> 
+</html>
